@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'case-study';
+  title = 'Angular Training Assignment';
+
+  onIntervalEvent(event) {
+    console.log('event is ', event)
+  }
 }

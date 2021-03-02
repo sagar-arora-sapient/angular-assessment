@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <app-timer [interval]="ioData"></app-timer>
+        </div>
+        <div class="col-xs-8">
+            <app-controls (intervalEvent)="onIntervalEvent($event)" 
+            (startClick)="onStartClick($event)" (pauseClick)="onPauseClick($event)"
+            (startTime)="onStartTime($event)" (pausedTime)="onPausedTime($event)"></app-controls>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-xs-4">
+            <app-logs [start]="startDate" [pause]="pauseDate"></app-logs>
+        </div>
+        <div class="col-xs-8">
+            <app-counter [start]="startCount" [pause]="pauseCount"></app-counter>
+        </div>
+    </div>
+</div>

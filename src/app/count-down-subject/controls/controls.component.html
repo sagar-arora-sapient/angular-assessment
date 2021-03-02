@@ -1,0 +1,18 @@
+<div class="container mr-2">
+    <form>
+        <div class="form-group row">
+          <label for="time" class="col-sm-4 col-form-label">Enter Time Limit</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="time" placeholder="Time">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-outline-secondary mr-2">Start/Pause</button>
+            <button type="button" class="btn btn-outline-danger">Reset</button>
+        </div>
+        <div class="row mx-2">
+            <p>Paused at <span *ngFor="let pause of pausedAt">{{ pause }}</span></p>
+            <!-- <p *ngFor = "let pause of pausedAt">Paused at {{ pause }}</p> -->
+        </div>
+    </form>
+</div>
