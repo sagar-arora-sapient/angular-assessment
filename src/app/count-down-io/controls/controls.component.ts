@@ -25,10 +25,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
   pausedAt = [];
   ids=[];
   
-  ngOnInit(): void {
-    // this.pausedAt=[];  
-    // this.pausedAt.fill(4,0,8);
-  }
+  ngOnInit(): void {}
   
   onStartPause(pauseStatus) {
     
@@ -36,7 +33,6 @@ export class ControlsComponent implements OnInit, OnDestroy {
       this.startClickCount++;
       this.startClick.emit(this.startClickCount);
       this.startTime.emit(this.startDate);
-      console.log('start', this.startClickCount);
       if(this.lastEmit){
         this.lastNumber=this.lastEmit;
       }else{
@@ -54,9 +50,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
       this.pauseClickCount++;
       this.pausedAt.push(this.lastEmit);
       this.pausedTime.emit(this.startDate);
-      console.log('Paused at', this.pausedAt);
       this.pauseClick.emit(this.pauseClickCount);
-      console.log('pause', this.pauseClickCount);
       let len = this.ids.length;
       while (len > 0) {
         const id = this.ids[len - 1];
@@ -75,15 +69,12 @@ export class ControlsComponent implements OnInit, OnDestroy {
 
   onReset() {
     let len = this.ids.length;
-      console.log('length is', len);
       while (len > 0) {
         const id = this.ids[len - 1];
-        console.log(`clear id`, id);
         clearTimeout(id);
         const index = this.ids.indexOf(id);
         if (index > -1) {
           this.ids.splice(index, 1);
-          console.log('after remove', this.ids);
         }
         len--;
       }

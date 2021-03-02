@@ -9,6 +9,5 @@ export class AppComponent {
   title = 'Angular Training Assignment';
 
   onIntervalEvent(event) {
-    console.log('event is ', event)
   }
 }

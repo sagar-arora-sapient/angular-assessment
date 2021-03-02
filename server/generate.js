@@ -12,5 +12,3 @@ for (var i = 1; i<= 300; i++) {
     quantity: faker.random.number()
   });
 }
-
-console.log(JSON.stringify(database));
