@@ -7,10 +7,9 @@ import { CountdownService } from '../countdown.service';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-  @Input() interval: number;
-  constructor(private countdownService: CountdownService) { }
-  
   time_duration: number;
+  
+  constructor(private countdownService: CountdownService) { }
   
   ngOnInit(): void {
     this.countdownService.lastNumber.subscribe((duration: number)=>{
