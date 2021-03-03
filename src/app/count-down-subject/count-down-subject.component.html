@@ -9,10 +9,10 @@
     </div>
     <div class="row ">
         <div class="col-xs-4">
-            <app-logs></app-logs>
+            <app-logs [start]="startDate" [pause]="pauseDate"></app-logs>
         </div>
         <div class="col-xs-8">
-            <app-counter></app-counter>
+            <app-counter [start]="startCount" [pause]="pauseCount"></app-counter>
         </div>
     </div>
 </div>

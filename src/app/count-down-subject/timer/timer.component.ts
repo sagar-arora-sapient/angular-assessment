@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CountdownService } from '../countdown.service';
 
 @Component({
   selector: 'app-timer',
@@ -6,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-
-  constructor() { }
+  @Input() interval: number;
+  constructor(private countdownService: CountdownService) { }
   
-  time_duration: number=1000;
-
+  time_duration: number;
+  
   ngOnInit(): void {
+    this.countdownService.lastNumber.subscribe((duration: number)=>{
+      this.time_duration = duration;
+    });
+    this.countdownService.intervalEvent.subscribe((intervalData: number)=>{
+      this.time_duration=intervalData;
+    });
   }
-
 }

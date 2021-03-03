@@ -7,13 +7,16 @@ import { TimerComponent } from './timer/timer.component';
 import { ControlsComponent } from './controls/controls.component';
 import { LogsComponent } from './logs/logs.component';
 import { CounterComponent } from './counter/counter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [CountDownSubjectComponent, TimerComponent, ControlsComponent, LogsComponent, CounterComponent],
   imports: [
     CommonModule,
-    CountDownSubjectRoutingModule
+    CountDownSubjectRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CountDownSubjectModule { }

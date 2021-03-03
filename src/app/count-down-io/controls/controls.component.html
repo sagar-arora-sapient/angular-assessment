@@ -7,12 +7,11 @@
           </div>
         </div>
         <div class="row justify-content-center" *ngIf="time">
-            <button type="button" class="btn btn-outline-secondary mr-2" (click)="onStartPause(pauseStatus)">Start/Pause</button>
+            <button type="button" class="btn btn-outline-secondary mr-2" (click)="onStartPause(pauseStatus)">{{!pauseStatus? 'Start': 'Pause'}}</button>
             <button type="button" class="btn btn-outline-danger" (click)="onReset()">Reset</button>
         </div>
         <div class="row mx-2" *ngFor="let pause of pausedAt">
             <p>Paused at {{ pause }}</p><br>
-            <!-- <p *ngFor = "let pause of pausedAt">Paused at {{ pause }}</p> -->
         </div>
     </form>
 </div>

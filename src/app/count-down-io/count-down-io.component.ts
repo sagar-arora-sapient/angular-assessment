@@ -31,19 +31,11 @@ export class CountDownIOComponent implements OnInit {
   }
 
   onStartTime(start: Date){
-    if(start){
-      this.startDate.push(start);
-    }else{
-      this.startDate.length=0;
-    }
+    start? this.startDate.push(start): this.startDate.length=0;
   }
 
   onPausedTime(paused: Date){
-    if(paused){
-      this.pauseDate.push(paused);
-    }else{
-      this.pauseDate.length=0;
-    }
+    paused? this.pauseDate.push(paused): this.pauseDate.length=0;
   }
 
 }
