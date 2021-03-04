@@ -6,16 +6,13 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./dyn-div.component.css']
 })
 export class DynDivComponent implements OnInit {
-  divsArray = [];
-  counter = 0;
+  divsArray:number[] = [];
+  counter:number = 0;
 
   @HostListener('window:mousewheel', ['$event']) onScrollHost(e: Event): void {
-    console.log('event',e);
-
     this.divsArray.push(this.counter++);
-    console.log(this.divsArray);
-    // console.log(this.getYPosition(e));
   }
+
   constructor() { }
 
   ngOnInit(): void {

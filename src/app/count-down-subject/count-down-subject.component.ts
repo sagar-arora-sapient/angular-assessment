@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CountdownService } from './countdown.service';
+import { CountdownService } from './services/countdown.service';
 
 @Component({
   selector: 'app-count-down-subject',

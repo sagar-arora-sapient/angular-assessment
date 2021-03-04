@@ -1,34 +1,14 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <table>
-                <thead>
-                <tr>
-                    assuming all terms are the same, just take the first of the object
-                    <td *ngFor="let head of uniqueHeader">{{head}}</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let user of users; let i = index">
-                    <td>{{users[i]}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div> -->
-<table class="table">
-    <thead>
-      <tr>
-        <th *ngFor="let field of uniqueHeader" (click)="onHeadClick(field)">{{field | titlecase}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr >
-        <!-- <th scope="row">{{field.id}}</th> -->
-        <td>1</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-    </tbody>
-  </table>
+<section>
+    <table class="table">
+        <thead>
+            <tr>
+            <th *ngFor="let field of uniqueHeader" (click)="checkState(field,state)">{{field | titlecase}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users" >
+                <td *ngFor="let field of uniqueHeader">{{user[field]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

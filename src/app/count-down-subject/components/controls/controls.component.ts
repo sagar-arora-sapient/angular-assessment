@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountdownService } from '../countdown.service';
+import { CountdownService } from '../../services/countdown.service';
 
 @Component({
   selector: 'app-controls',
@@ -41,7 +41,7 @@ export class ControlsComponent implements OnInit {
           this.clearExistingIntervals();
           alert('Countdown stopped!!');
         }
-      },1000);
+      }, 1000);
       this.pauseStatus =! this.pauseStatus;
       this.ids.push(this.interval);
     }else{

@@ -36,10 +36,15 @@ export class ControlsComponent implements OnInit, OnDestroy {
       this.lastNumber=this.lastEmit?this.lastEmit: this.time;
       this.intervalEvent.emit(this.lastNumber);
       this.interval=setInterval(()=>{
+        if(this.lastNumber>0){
         this.intervalEvent.emit(this.lastNumber-1);
         this.lastNumber--;
         this.lastEmit = this.lastNumber;
-      },1000);
+        }else{
+          alert('Countdown stopped!!');
+          this.clearExistingIntervals();
+        }
+      }, 1000);
       this.pauseStatus =! this.pauseStatus;
       this.ids.push(this.interval);
     }else{
