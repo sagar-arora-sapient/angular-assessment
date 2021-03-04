@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CountdownService } from '../../services/countdown.service';
-
 @Component({
   selector: 'app-logs',
   templateUrl: './logs.component.html',
