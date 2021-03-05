@@ -27,8 +27,8 @@ export class ControlsComponent implements OnInit, OnDestroy {
   
   ngOnInit() {}
   
-  public onStartPause(pauseStatus): void {
-    if(!pauseStatus ){
+  public onStartPause(pauseStatus) {
+    if(!pauseStatus){
       this.startClickCount++;
       this.startClick.emit(this.startClickCount);
       this.startTime.emit(this.startDate);
@@ -44,7 +44,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
           this.clearExistingIntervals();
         }
       }, 1000);
-      this.pauseStatus != this.pauseStatus;
+      this.pauseStatus =! this.pauseStatus;
       this.ids.push(this.interval);
     }else{
       this.pauseClickCount++;
@@ -58,7 +58,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
     }
   }
 
-  public clearExistingIntervals(): void {
+  public clearExistingIntervals() {
     let len = this.ids.length;
     while (len > 0) {
       const id = this.ids[len - 1];
@@ -71,7 +71,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
     }
   }
 
-  public onReset():void {
+  public onReset() {
     this.clearExistingIntervals();
     // Emitting the initial time
     this.intervalEvent.emit(this.time);
@@ -90,7 +90,7 @@ export class ControlsComponent implements OnInit, OnDestroy {
     this.ids = [];
   }
 
-  ngOnDestroy():void {
+  ngOnDestroy() {
     clearInterval(this.interval);
   }
 

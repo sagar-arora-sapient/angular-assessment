@@ -42,7 +42,7 @@ export class ControlsComponent implements OnInit {
           alert('Countdown stopped!!');
         }
       }, 1000);
-      this.pauseStatus != this.pauseStatus;
+      this.pauseStatus = !this.pauseStatus;
       this.ids.push(this.interval);
     }else{
       this.pauseClickCount++;
