@@ -23,7 +23,7 @@ export class ControlsComponent implements OnInit {
   
   ngOnInit(): void {}
   
-  onStartPause(pauseStatus) {
+  public onStartPause(pauseStatus):void {
     
     if(!pauseStatus ){
       this.startClickCount++;
@@ -42,7 +42,7 @@ export class ControlsComponent implements OnInit {
           alert('Countdown stopped!!');
         }
       }, 1000);
-      this.pauseStatus =! this.pauseStatus;
+      this.pauseStatus != this.pauseStatus;
       this.ids.push(this.interval);
     }else{
       this.pauseClickCount++;
@@ -56,7 +56,7 @@ export class ControlsComponent implements OnInit {
     }
   }
 
-  clearExistingIntervals(){
+  public clearExistingIntervals(): void {
     let len = this.ids.length;
     while (len > 0) {
       const id = this.ids[len - 1];
@@ -69,7 +69,7 @@ export class ControlsComponent implements OnInit {
     }
   }
 
-  onReset() {
+  public onReset(): void {
     this.clearExistingIntervals();
     // Emitting the initial time
     this.countdownService.intervalEvent.emit(this.time);

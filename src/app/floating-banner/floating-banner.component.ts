@@ -23,7 +23,7 @@ export class FloatingBannerComponent implements OnInit {
   }
   state = 0;
 
-  scrollDone() {
+  public scrollDone() {
     this.state++;
   }
 

@@ -22,4 +22,10 @@ describe('FloatingBannerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call push divs on scroll', () => {
+    spyOn(component, 'scrollDone');
+    component.scrollDone();
+    expect(component.scrollDone).toHaveBeenCalled();
+  });
 });
